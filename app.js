@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             randomEmail : '',
+            randomEmails : [],
         }
     },
     methods: {
@@ -12,13 +13,21 @@ createApp({
             .then((response) => {
                 let randomEmail = response.data;
                 this.randomEmail = randomEmail.response;
+                this.randomEmails.push(this.randomEmail);
             })
+        },
+        getArrayOfRandomEmails () {
+            for (let i = 0; i < 10; i++) {
+                this.getRandomEmail();
+            }
         }
+
     },
     created() {
-        this.getRandomEmail();
+    
     },
     mounted() {
-        
+        this.getArrayOfRandomEmails()
+        console.log(this.randomEmails)
     }
 }).mount('#app')

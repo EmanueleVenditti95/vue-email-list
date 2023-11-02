@@ -9,8 +9,8 @@
 </head>
 <body>
     <ul id="app">
-        <li>
-            {{ randomEmail }}
+        <li v-for="(email,index) in randomEmails" :key="index" >     
+            {{ email }}
         </li>
     </ul>
 <script src="./app.js"></script>    
