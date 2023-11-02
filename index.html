@@ -9,7 +9,8 @@
 </head>
 <body>
     <ul id="app">
-        <li v-for="(email,index) in randomEmails" :key="index" >     
+        <li v-for="(email,index) in randomEmails" :key="index"
+            v-show="randomEmails.length >= 10" >     
             {{ email }}
         </li>
     </ul>

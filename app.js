@@ -21,13 +21,10 @@ createApp({
                 this.getRandomEmail();
             }
         }
-
     },
     created() {
-    
+        this.getArrayOfRandomEmails()
     },
     mounted() {
-        this.getArrayOfRandomEmails()
-        console.log(this.randomEmails)
     }
 }).mount('#app')
